@@ -1,10 +1,10 @@
-package com.banttang.banttangadminapi;
+package com.hproject;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BanttangAdminApiApplicationTests {
+class BanttangadminApplicationTests {
 
     @Test
     void contextLoads() {
