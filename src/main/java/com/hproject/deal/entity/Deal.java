@@ -11,31 +11,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TimeZone;
 
-//@Entity
+@Entity
 @Getter
 @NoArgsConstructor
 public class Deal extends BaseTimeEntity {
     @Id
     private long id;
-
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn
     private User user;
-
     private String title;
-
     private String content;
-
     private String location;
-
     private String category;
-
     private String category_detail;
-
     private TimeZone completed_at;
-
     private int beongae_count;
 
-    @OneToMany(mappedBy = "dealParticipant", cascade = CascadeType.ALL, targetEntity = DealParticipant.class)
+    @OneToMany(mappedBy = "deal", cascade = CascadeType.ALL)
     private List<DealParticipant> dealParticipantList = new ArrayList<>();
 }

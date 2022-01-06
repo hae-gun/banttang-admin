@@ -17,20 +17,14 @@ import java.util.List;
 @Entity
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
 public class User extends BaseTimeEntity {
     @Id
     private long id;
-
     private String nickname;
-
     private String provider;
-
     private String user_key;
-
-//    @OneToMany(mappedBy = "deal", cascade = CascadeType.ALL, targetEntity = Deal.class)
-//    private List<Deal> dealList = new ArrayList<>();
-//
-//    @OneToMany(mappedBy = "faq", cascade = CascadeType.ALL, targetEntity = Faq.class)
-//    private List<Faq> faqList = new ArrayList<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Deal> dealList = new ArrayList<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Faq> faqList = new ArrayList<>();
 }

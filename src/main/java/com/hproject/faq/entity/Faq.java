@@ -14,19 +14,13 @@ import java.util.TimeZone;
 public class Faq extends BaseTimeEntity {
     @Id
     private long id;
-
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id", insertable = false, updatable = false)
+    @JoinColumn
     private User user;
-
     private String title;
-
     private String content;
-
     @Enumerated(EnumType.STRING)
     private AnswerStatus answerStatus;
-
     private String answer;
-
     private TimeZone answered_at;
 }

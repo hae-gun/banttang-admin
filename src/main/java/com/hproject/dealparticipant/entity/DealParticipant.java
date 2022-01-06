@@ -7,20 +7,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
-//@Entity
+@Entity
 @Getter
 @NoArgsConstructor
 public class DealParticipant extends BaseTimeEntity {
     @Id
     private long id;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
-    private Deal deal;
-
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn
+    private Deal deal;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn
     private User user;
-
 }
 
